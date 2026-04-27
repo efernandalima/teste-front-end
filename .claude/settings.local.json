@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Figma__get_metadata",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\Fer\\\\.claude\\\\projects\\\\c--Users-Fer-Desktop-econverse-teste-front-end\\\\2af34199-40b9-4ce5-95f5-632cea6492bf\\\\tool-results\\\\mcp-claude_ai_Figma-get_metadata-1777310788636.txt\" -Raw; $content.Substring\\(0, [Math]::Min\\(3000, $content.Length\\)\\))",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\Fer\\\\.claude\\\\projects\\\\c--Users-Fer-Desktop-econverse-teste-front-end\\\\2af34199-40b9-4ce5-95f5-632cea6492bf\\\\tool-results\\\\mcp-claude_ai_Figma-get_metadata-1777310788636.txt\" -Raw; $content.Substring\\(3000, [Math]::Min\\(5000, $content.Length - 3000\\)\\))",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\Fer\\\\.claude\\\\projects\\\\c--Users-Fer-Desktop-econverse-teste-front-end\\\\2af34199-40b9-4ce5-95f5-632cea6492bf\\\\tool-results\\\\mcp-claude_ai_Figma-get_metadata-1777310788636.txt\" -Raw; $content.Substring\\(8000, [Math]::Min\\(8000, $content.Length - 8000\\)\\))",
+      "Bash(npx tsc *)",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Fer\\\\Desktop\\\\econverse\\\\teste-front-end\\\\src\\\\components\\\\BannerApoio\")",
+      "PowerShell(Invoke-WebRequest -Uri \"https://www.figma.com/api/mcp/asset/3bb6fd8d-f92c-4ba5-840c-8385c6f0d455\" -OutFile \"c:\\\\Users\\\\Fer\\\\Desktop\\\\econverse\\\\teste-front-end\\\\src\\\\assets\\\\images\\\\banner-parceiros.jpg\" -UseBasicParsing)"
+    ]
+  }
+}

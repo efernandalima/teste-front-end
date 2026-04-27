@@ -1,11 +1,15 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.header {
-  width: 100%;
+.headerWrapper {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
   background-color: $color-bg;
   font-family: $font-primary;
 }
@@ -166,12 +170,8 @@
 .nav {
   width: 100%;
   height: 40px;
-  box-shadow: $shadow-header;
-  overflow-x: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(57, 48, 19, 0.12);
 
   .container {
     height: 100%;
@@ -179,12 +179,25 @@
     padding: 0 69px;
     @media (max-width: 768px) {
       padding: 0 16px;
+      min-width: unset;
     }
   }
 
   @media (max-width: 768px) {
     display: none;
     height: auto;
+  }
+}
+
+.navInner {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -210,7 +223,7 @@
     font-size: $font-size-xs;
     font-weight: 600;
     text-transform: uppercase;
-    color: $color-text;
+    color: $color-text-light;
     white-space: nowrap;
     text-decoration: none;
     transition: color 0.2s;

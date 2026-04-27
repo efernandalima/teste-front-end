@@ -1,0 +1,96 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.banner {
+  width: 100%;
+  height: 390px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 260px;
+  }
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    left: 24px;
+  }
+
+  @media (max-width: 768px) {
+    left: 16px;
+  }
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: 600;
+  color: #fff;
+  line-height: 50px;
+  max-width: 822px;
+  margin-bottom: 8px;
+
+  @media (max-width: 1024px) {
+    font-size: $font-size-2xl;
+    line-height: 42px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-size-xl;
+    line-height: 36px;
+    max-width: 280px;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-xl;
+  color: #fff;
+  margin-bottom: 24px;
+
+  strong {
+    color: $color-secondary;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-size-md;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 7px 49px;
+  background-color: $color-secondary;
+  border-radius: 5px;
+  font-size: $font-size-base;
+  font-weight: 600;
+  color: $color-dark;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    height: 42px;
+    padding: 7px 32px;
+    font-size: $font-size-sm;
+  }
+}
