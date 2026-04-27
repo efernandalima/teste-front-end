@@ -18,9 +18,9 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} role="banner">
       {/* Barra topo */}
-      <div className={styles.topBar}>
+      <div className={styles.topBar} aria-label="Benefícios">
         <div className={styles.container}>
           <div className={styles.topBarItem}>
             <img src={iconShield} alt="" aria-hidden="true" />
@@ -49,43 +49,54 @@ function Header() {
           <a
             href="/"
             className={styles.logo}
-            aria-label="Econverse - Página inicial"
+            aria-label="Econverse - Ir para página inicial"
+            aria-current="page"
           >
-            <img src={logoImg} alt="Econverse" />
+            <img src={logoImg} alt="Econverse" width={130} height={41} />
           </a>
 
-          <div className={styles.search}>
+          <div className={styles.search} role="search">
+            <label htmlFor="search-input" className={styles.srOnly}>
+              Buscar produtos
+            </label>
             <input
+              id="search-input"
               type="search"
               placeholder="O que você está buscando?"
-              aria-label="Buscar produtos"
+              autoComplete="off"
             />
             <button type="submit" aria-label="Buscar">
               <img src={iconSearch} alt="" aria-hidden="true" />
             </button>
           </div>
 
-          <div className={styles.actions}>
+          <div
+            className={styles.actions}
+            role="group"
+            aria-label="Ações do usuário"
+          >
             <button aria-label="Minha conta" className={styles.desktopOnly}>
               <img src={iconBox} alt="" aria-hidden="true" />
             </button>
             <button aria-label="Favoritos" className={styles.desktopOnly}>
               <img src={iconHeart} alt="" aria-hidden="true" />
             </button>
-            <button aria-label="Perfil" className={styles.desktopOnly}>
+            <button aria-label="Meu perfil" className={styles.desktopOnly}>
               <img src={iconUser} alt="" aria-hidden="true" />
             </button>
-            <button aria-label="Carrinho">
+            <button aria-label="Carrinho de compras">
               <img src={iconCart} alt="" aria-hidden="true" />
             </button>
             <button
               className={styles.hamburger}
-              aria-label="Menu"
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
+              aria-controls="main-nav"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              <span className={menuOpen ? styles.hamburgerOpen : ""}></span>
-              <span className={menuOpen ? styles.hamburgerOpen : ""}></span>
-              <span className={menuOpen ? styles.hamburgerOpen : ""}></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
             </button>
           </div>
         </div>
@@ -93,33 +104,34 @@ function Header() {
 
       {/* Navegação */}
       <nav
+        id="main-nav"
         className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
         aria-label="Menu principal"
       >
         <div className={styles.container}>
-          <ul className={styles.navList}>
+          <ul className={styles.navList} role="list">
             <li>
-              <a href="#">Todas categorias</a>
+              <a href="/categorias">Todas categorias</a>
             </li>
             <li>
-              <a href="#">Supermercado</a>
+              <a href="/supermercado">Supermercado</a>
             </li>
             <li>
-              <a href="#">Livros</a>
+              <a href="/livros">Livros</a>
             </li>
             <li>
-              <a href="#">Moda</a>
+              <a href="/moda">Moda</a>
             </li>
             <li>
-              <a href="#">Lançamentos</a>
+              <a href="/lancamentos">Lançamentos</a>
             </li>
             <li>
-              <a href="#" className={styles.active}>
+              <a href="/ofertas" className={styles.active} aria-current="page">
                 Ofertas do dia
               </a>
             </li>
             <li>
-              <a href="#" className={styles.signature}>
+              <a href="/assinatura" className={styles.signature}>
                 <img src={iconCrown} alt="" aria-hidden="true" />
                 Assinatura
               </a>
