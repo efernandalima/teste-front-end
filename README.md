@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# 🛒 Econverse - Teste Desenvolvedor Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém o desafio técnico para a vaga de Desenvolvedor Front-End na **Econverse**. O projeto foca na criação de uma interface de e-commerce de alta fidelidade visual, com consumo de dados dinâmicos e arquitetura moderna.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Referências do Desafio
 
-## React Compiler
+O projeto foi desenvolvido seguindo rigorosamente as especificações oficiais:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Layout (Figma):** [Design Teste-Front-End-Jr](https://www.figma.com/design/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0-1&p=f&t=Rt9jEQcgJ2PbprIV-0)
+- **API/JSON:** [Lista de Produtos Econverse](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Para garantir um código limpo, tipado e de fácil manutenção, foram utilizadas as seguintes tecnologias:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React 18**: Construção de interface reativa e componentizada.
+- **TypeScript**: Garantia de tipagem estática e segurança no fluxo de dados.
+- **Vite**: Tooling para um ambiente de desenvolvimento rápido e otimizado.
+- **SASS (SCSS Modules)**: Estilização modular, evitando vazamento de escopo global.
+- **Fetch API & Custom Hooks**: Abstração da lógica de consumo de dados.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📐 Diferenciais e Boas Práticas
+
+- **Pixel Perfect**: Fidelidade total ao layout do Figma, respeitando cores, fontes e espaçamentos.
+- **Clean Architecture**: Organização modular de pastas (hooks, services, components e types).
+- **SEO & HTML Semântico**: Estruturação pensada em acessibilidade e indexação.
+- **Zero UI Libs**: Toda a estilização e componentes foram desenvolvidos do zero, sem o uso de frameworks externos.
+
+---
+
+## 📦 Como rodar o projeto
+
+Para compilar e rodar o projeto em sua máquina local, siga os passos:
+
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/efernandalima/teste-front-end.git
+   ```
+
+2. **Instalar as dependências:**
+   ```bash
+   npm install
+   ```
+
+3. **Executar em modo de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Gerar build de produção (para compilar):**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📂 Estrutura de Pastas
+
+```text
+src/
+├── assets/         # Ícones (SVG) e imagens
+├── components/     # Componentes modulares (tsx + scss modules)
+├── hooks/          # Hooks customizados
+├── services/       # Camada de comunicação com a API
+├── styles/         # Variáveis e estilos globais
+└── types/          # Interfaces TypeScript
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 Implementações Realizadas
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Vitrine de Produtos**: Consumo dinâmico dos dados através do endpoint fornecido.
+- **Modal de Detalhes**: Interatividade ao clicar em um produto, exibindo as informações detalhadas.
+- **Responsividade**: Layout adaptável para mobile, tablet e desktop.
+
+---
+
+**Desenvolvido por Fernanda Lima** 🚀
