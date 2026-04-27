@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import useFetch from "./hooks/useFetch";
 import { getProducts } from "./services/productService";
 import type { ProductsResponse } from "./types/product";
@@ -9,15 +10,17 @@ function App() {
   if (error) return <p>Erro: {error}</p>;
 
   return (
-    <main>
-      <h1>Econverse</h1>
-      {data?.products.map((product, index) => (
-        <div key={index}>
-          <p>{product.productName}</p>
-          <p>R$ {product.price}</p>
-        </div>
-      ))}
-    </main>
+    <>
+      <Header />
+      <main>
+        {data?.products.map((product, index) => (
+          <div key={index}>
+            <p>{product.productName}</p>
+            <p>R$ {product.price}</p>
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
 

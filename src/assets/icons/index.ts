@@ -1,0 +1,9 @@
+export { default as iconShield } from "./icon-shield.svg";
+export { default as iconTruck } from "./icon-truck.svg";
+export { default as iconCreditCard } from "./icon-creditcard.svg";
+export { default as iconSearch } from "./icon-search.svg";
+export { default as iconBox } from "./icon-box.svg";
+export { default as iconHeart } from "./icon-heart.svg";
+export { default as iconUser } from "./icon-user.svg";
+export { default as iconCart } from "./icon-cart.svg";
+export { default as iconCrown } from "./icon-crown.svg";
