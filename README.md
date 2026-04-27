@@ -17,7 +17,7 @@ O projeto foi desenvolvido seguindo rigorosamente as especificações oficiais:
 
 Para garantir um código limpo, tipado e de fácil manutenção, foram utilizadas as seguintes tecnologias:
 
-- **React 18**: Construção de interface reativa e componentizada.
+- **React 19**: Construção de interface reativa e componentizada.
 - **TypeScript**: Garantia de tipagem estática e segurança no fluxo de dados.
 - **Vite**: Tooling para um ambiente de desenvolvimento rápido e otimizado.
 - **SASS (SCSS Modules)**: Estilização modular, evitando vazamento de escopo global.
