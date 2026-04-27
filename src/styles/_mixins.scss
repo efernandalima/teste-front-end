@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+// Container centralizado
+@mixin container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Flexbox
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Responsivo
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Truncar texto
+@mixin truncate($lines: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
