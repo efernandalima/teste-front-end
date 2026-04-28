@@ -58,6 +58,11 @@ Para compilar e rodar o projeto em sua máquina local, siga os passos:
    npm run build
    ```
 
+5. **Pré-visualizar a build de produção localmente:**
+   ```bash
+   npm run preview
+   ```
+
 ---
 
 ## 📂 Estrutura de Pastas

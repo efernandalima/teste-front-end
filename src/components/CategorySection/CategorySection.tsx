@@ -1,12 +1,14 @@
 import { useState } from "react";
 import styles from "./CategorySection.module.scss";
-import iconTecnologia from "../../assets/icons/categories/icon-tecnologia.png";
-import iconSupermercado from "../../assets/icons/categories/icon-supermercado.png";
-import iconBebidas from "../../assets/icons/categories/icon-bebidas.png";
-import iconFerramentas from "../../assets/icons/categories/icon-ferramentas.png";
-import iconSaude from "../../assets/icons/categories/icon-saude.png";
-import iconEsportes from "../../assets/icons/categories/icon-esportes.png";
-import iconModa from "../../assets/icons/categories/icon-moda.png";
+import {
+  iconTecnologia,
+  iconSupermercado,
+  iconBebidas,
+  iconFerramentas,
+  iconSaude,
+  iconEsportes,
+  iconModa,
+} from "../../assets/icons/categories";
 
 const categories = [
   { id: "tecnologia", label: "Tecnologia", icon: iconTecnologia },
@@ -24,7 +26,7 @@ function CategorySection() {
   return (
     <section className={styles.section} aria-label="Compre por categoria">
       <div className={styles.container}>
-        <h2 className={styles.title}>Compre por categoria</h2>
+        <h2 className={styles.srOnly}>Compre por categoria</h2>
         <ul className={styles.list} role="list">
           {categories.map((cat) => (
             <li key={cat.id}>

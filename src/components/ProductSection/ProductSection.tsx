@@ -11,9 +11,10 @@ function formatPrice(value: number) {
 
 interface Props {
   products: Product[];
+  showTabs?: boolean;
 }
 
-function ProductSection({ products }: Props) {
+function ProductSection({ products, showTabs = false }: Props) {
   const [activeTab, setActiveTab] = useState(0);
   const [page, setPage] = useState(0);
 
@@ -29,30 +30,34 @@ function ProductSection({ products }: Props) {
           <span className={styles.line} aria-hidden="true" />
         </div>
 
-        <a href="/produtos" className={styles.viewAll}>
-          Ver todos
-        </a>
-
-        <nav className={styles.tabs} aria-label="Filtrar por categoria">
-          <ul className={styles.tabList} role="list">
-            {TABS.map((tab, i) => (
-              <li key={tab} className={styles.tabItem}>
-                <button
-                  className={`${styles.tab} ${activeTab === i ? styles.tabActive : ""}`}
-                  onClick={() => { setActiveTab(i); setPage(0); }}
-                  aria-pressed={activeTab === i}
-                >
-                  {tab.toUpperCase()}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {showTabs ? (
+          <nav className={styles.tabs} aria-label="Filtrar por categoria">
+            <ul className={styles.tabList} role="list">
+              {TABS.map((tab, i) => (
+                <li key={tab} className={styles.tabItem}>
+                  <button
+                    className={`${styles.tab} ${activeTab === i ? styles.tabActive : ""}`}
+                    onClick={() => { setActiveTab(i); setPage(0); }}
+                    aria-pressed={activeTab === i}
+                  >
+                    {tab.toUpperCase()}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : (
+          <div className={styles.viewAllSimple}>
+            <a href="/produtos" className={styles.viewAll}>
+              Ver todos
+            </a>
+          </div>
+        )}
 
         <div className={styles.carousel}>
           {totalPages > 1 && (
             <button
-              className={styles.arrowBtn}
+              className={`${styles.arrowBtn} ${styles.arrowLeft}`}
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               disabled={page === 0}
               aria-label="Página anterior"
@@ -62,11 +67,11 @@ function ProductSection({ products }: Props) {
           )}
 
           <ul className={styles.grid} role="list">
-            {visible.map((product, i) => {
+            {visible.map((product) => {
               const originalPrice = product.price * 1.07;
               const installment = product.price / 2;
               return (
-                <li key={i} className={styles.card}>
+                <li key={product.productName} className={styles.card}>
                   <div className={styles.imageWrap}>
                     <img
                       src={product.photo}
@@ -91,7 +96,7 @@ function ProductSection({ products }: Props) {
 
           {totalPages > 1 && (
             <button
-              className={styles.arrowBtn}
+              className={`${styles.arrowBtn} ${styles.arrowRight}`}
               onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
               disabled={page === totalPages - 1}
               aria-label="Próxima página"

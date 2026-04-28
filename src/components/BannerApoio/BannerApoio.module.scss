@@ -7,9 +7,9 @@
 }
 
 .container {
-  max-width: $container-width;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 $container-padding;
+  padding: 0 80px;
 
   @media (max-width: 1024px) {
     padding: 0 24px;
@@ -29,7 +29,7 @@
   }
 }
 
-// CARD
+
 .card {
   position: relative;
   flex: 1;
@@ -52,7 +52,7 @@
   display: block;
 }
 
-// Gradient: from transparent (top) to black (85%) — 261px high, starts at 89px from top
+
 .gradient {
   position: absolute;
   bottom: 0;

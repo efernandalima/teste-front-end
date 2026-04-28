@@ -7,9 +7,9 @@
 }
 
 .container {
-  max-width: $container-width;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 $container-padding;
+  padding: 0 85px;
 
   @media (max-width: 1024px) {
     padding: 0 24px;
@@ -19,12 +19,17 @@
   }
 }
 
-// HEADING
+
 .heading {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 8px;
+  gap: 34px;
+  margin: 0 65px 8px;
+
+  @media (max-width: 1024px) {
+    margin: 0 0 8px;
+    gap: 24px;
+  }
 }
 
 .title {
@@ -49,20 +54,24 @@
   }
 }
 
-.viewAll {
-  display: block;
+.viewAllSimple {
   text-align: center;
+  margin: 4px 0 24px;
+}
+
+.viewAll {
+  display: inline-block;
   font-size: 15px;
   font-weight: 700;
-  color: $color-text-dark;
-  margin-bottom: 24px;
+  color: #3F3F40;
+  text-decoration: none;
 
   &:hover {
     color: $color-primary;
   }
 }
 
-// TABS
+
 .tabs {
   margin-bottom: 32px;
 }
@@ -70,7 +79,8 @@
 .tabList {
   display: flex;
   list-style: none;
-  border: 1px solid $color-border-2;
+  border: 1px solid #BDBDBD;
+  border-radius: 0;
 }
 
 .tabItem {
@@ -97,6 +107,7 @@
   transition: color 0.2s;
   white-space: nowrap;
   padding: 0 8px;
+  font-family: $font-primary;
 
   &:hover {
     color: $color-primary;
@@ -116,15 +127,15 @@
   color: $color-primary;
 }
 
-// CAROUSEL
+
 .carousel {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  position: relative;
 }
 
 .arrowBtn {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -133,6 +144,7 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s;
+  z-index: 1;
 
   &:disabled {
     opacity: 0.3;
@@ -148,8 +160,15 @@
   }
 }
 
+.arrowLeft {
+  left: -47px;
+}
+
+.arrowRight {
+  right: -47px;
+}
+
 .grid {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
@@ -163,19 +182,26 @@
   }
 }
 
-// CARD
+
 .card {
   background: $color-bg;
+  width: 100%;
+  height: 500px;
   border-radius: $border-radius-lg;
-  box-shadow: $shadow-card;
+  box-shadow: 0px 3px 19px rgba(0, 0, 0, 0.22);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .imageWrap {
   width: 100%;
-  height: 228px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +261,7 @@
   font-size: $font-size-xs;
   color: $color-primary;
   font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .buyBtn {

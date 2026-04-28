@@ -19,7 +19,6 @@ function Header() {
   return (
     <div className={styles.headerWrapper}>
       <header className={styles.header} role="banner">
-        {/* Barra topo */}
         <div className={styles.topBar} aria-label="Benefícios">
           <div className={styles.container}>
             <div className={styles.topBarItem}>
@@ -43,7 +42,7 @@ function Header() {
           </div>
         </div>
 
-        {/* Barra principal */}
+
         <div className={styles.mainBar}>
           <div className={styles.container}>
             <a
@@ -88,7 +87,7 @@ function Header() {
                 <img src={iconCart} alt="" aria-hidden="true" />
               </button>
               <button
-                className={styles.hamburger}
+                className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ""}`}
                 aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
                 aria-expanded={menuOpen}
                 aria-controls="main-nav"
@@ -103,13 +102,12 @@ function Header() {
         </div>
       </header>
 
-      {/* Navegação */}
+
       <nav
         id="main-nav"
         className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
         aria-label="Menu principal"
       >
-        <div className={styles.navInner}>
         <div className={styles.container}>
           <ul className={styles.navList} role="list">
             <li>
@@ -139,7 +137,6 @@ function Header() {
               </a>
             </li>
           </ul>
-        </div>
         </div>
       </nav>
     </div>

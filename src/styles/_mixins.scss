@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-// Container centralizado
+
 @mixin container {
   width: 100%;
   max-width: $container-width;
@@ -8,7 +8,7 @@
   padding: 0 $container-padding;
 }
 
-// Flexbox
+
 @mixin flex($direction: row, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -16,7 +16,7 @@
   align-items: $align;
 }
 
-// Responsivo
+
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -29,7 +29,7 @@
   }
 }
 
-// Truncar texto
+
 @mixin truncate($lines: 1) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;

@@ -16,7 +16,7 @@ function useFetch<T>(fetchFn: () => Promise<T>): UseFetchResult<T> {
       .then(setData)
       .catch(() => setError("Erro ao carregar dados"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [fetchFn]);
 
   return { data, loading, error };
 }

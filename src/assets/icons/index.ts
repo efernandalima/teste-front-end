@@ -7,3 +7,6 @@ export { default as iconHeart } from "./icon-heart.svg";
 export { default as iconUser } from "./icon-user.svg";
 export { default as iconCart } from "./icon-cart.svg";
 export { default as iconCrown } from "./icon-crown.svg";
+export { default as iconInstagram } from "./icon-instagram.svg";
+export { default as iconFacebook } from "./icon-facebook.svg";
+export { default as iconLinkedin } from "./icon-linkedin.svg";
